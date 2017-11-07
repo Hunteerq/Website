@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Sarpanch';
+    font-size: 12px;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+hgroup {
+    font-family: 'Sarpanch';
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 2;
+    right: 55%;
+    transform: translateX(50%);
+}
+
+header nav {
+    position: relative;
+    z-index: 2;
+}
+
+header img {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -40%;
+    z-index: 1;
+}
+
+header nav hgroup {
+    color: #0E0B16;
+    padding-top: 10%;
+}
+
+header nav hgroup h1 {
+    font-size: 3.2rem;
+    text-shadow: 2.2px -2.2px 1.65px #e62739;
+    letter-spacing: 1.2px;
+    overflow: hidden;
+    border-right: .15em solid black;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .05em;
+    animation: typing 10s steps(40, end) infinite, blink-caret .75s step-end infinite;
+}
+
+#contextMenu {
+    padding: 3.5%;
+    float: right;
+    top: 20%;
+    right: 6%;
+    z-index: 2;
+    font-size: 2.4rem;
+    color: #e62739;
+}
+
+/*
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+    animation: colorMenu 40s linear;
+}
+*/
+
+#contextMenu:hover {
+
+    animation: colorMenu 40s linear;
+}
+
+
+#arrowDown {
+    color: #e62739;
+    text-align: center;
+    height: 6rem;
+    width: 6rem;
+    border: 5px solid #e62739;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    font-size: 2rem;
+    bottom: 5%;
+    right: 50%;
+    transform: translateX(50%);
+    text-shadow: 0px 25px #e62739;
+    overflow: hidden;
+}
+
+.fa-chevron-down {
+    animation: arrowMovement 3s infinite linear;
+    animation-delay: 0, 2s;
+}
+
+#arrowDown:hover {
+    animation: colorArrow 40s linear;
+    /*
+    color: white;
+    border-color: white;
+    text-shadow: 0px 20px white;*/
+}
+
+
+/* MAIN */
+
+main {
+    height: 100vh;
+    margin-top: 100vh;
+    position: relative;
+    background-color: #e62739;
+    /*#0E0B16;*/
+    text-align: center;
+}
+
+main h1 {
+    position: relative;
+    top: 5%;
+    color: #DFDCE3;
+}
+
+main div {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    background-color: aqua;
+}
+
+main div img {
+    width: 70%;
+    height: 70%;
+    margin: inherit;
+
+}
+
+footer {
+    background-color: #0E0B16;
+    font-size: 2.2rem;
+    color: white;
+    position: relative;
+    height: 5vh;
+    text-align: center;
+}
+
+/* QUERIES */
+
+@media (orientation: landscape) {
+    header img {
+        right: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    h3 span::after {
+        content: '\A';
+        white-space: pre;
+    }
+}
+
+@media (min-width: 760px) {
+    header nav hgroup h1 {
+        font-size: 5rem;
+    }
+    hgroup {
+        font-size: 3rem;
+        right: 50%;
+    }
+    #arrowDown {
+        height: 6.5rem;
+        width: 6.5rem;
+        font-size: 3.1rem;
+    }
+    #contextMenu {
+        padding-right: 90px;
+        font-size: 4rem;
+    }
+    #arrowDown:hover {
+        cursor: pointer;
+    }
+}
+
+
+/* ANIMATION */
+
+@keyframes arrowMovement {
+    0% {
+        transform: translateY(-50px);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY (50px);
+    }
+    100% {
+        transform: translateY(225px);
+    }
+}
+
+@keyframes typing {
+    0%,
+    100% {
+        width: 0.01%/* prevent h3 from moving */
+    }
+    15%,
+    99.999% {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    0%,
+    100% {
+        border-color: transparent
+    }
+    50% {
+        border-color: #e62739;
+    }
+}
+
+@keyframes colorMenu {
+    0% {
+        color: ##e62739;
+    }
+
+    1%,
+    100% {
+        color: white;
+    }
+}
+
+@keyframes colorArrow {
+    0% {}
+    1%,
+    100% {
+        color: white;
+        border-color: white;
+        text-shadow: 0px 20px white;
+    }
+}
